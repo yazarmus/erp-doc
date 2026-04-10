@@ -1,0 +1,351 @@
+<article class="article-card">
+  <h1>Yatırım Analizi ve Vendor Seçimi</h1>
+
+  <p>
+    ERP seçimi sadece bir yazılım kararı değil, şirketin geleceğini şekillendiren 
+    stratejik bir yatırımdır. Bu bölüm, doğru yazılım firmasını seçmek için 
+    gereken değerlendirme kriterlerini ve yatırımın geri dönüş hesaplamasını içerir.
+  </p>
+  
+  <div class="callout" style="background-color: #fff8e1; border-color: #ffc107;">
+    <div class="callout-icon" style="color: #f57c00;">⚠️</div>
+    <div class="callout-text">
+      <p style="margin: 0; font-size: 13px;">
+        <strong>Önemli Not:</strong> Bu bölümde yer alan fiyatlar ve maliyet değerleri 
+        <em>tahmin niteliğindedir</em> ve sektörel ortalamalara dayanmaktadır. 
+        Kesin rakamlar için yazılım firmalarından teklif alınması önerilir. 
+        Gerçek maliyetler; şirket büyüklüğü, modül sayısı, kullanıcı adedi ve 
+        özelleştirme gereksinimlerine göre değişiklik gösterebilir.
+      </p>
+    </div>
+  </div>
+
+  <details open>
+    <summary>ERP Yatırım Maliyeti ve ROI Hesaplaması</summary>
+    <div class="details-content">
+      <p>
+        ERP yatırımının toplam sahip olma maliyeti (TCO) ve geri dönüş süresi 
+        (tahmini aralıklar):
+      </p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Maliyet Kalemi</th>
+              <th>Tahmini Aralık</th>
+              <th>Notlar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lisans/Abonelik Ücreti</td>
+              <td>150.000 - 500.000 TL/yıl</td>
+              <td>Kullanıcı sayısına göre</td>
+            </tr>
+            <tr>
+              <td>Implementasyon/Uygulama</td>
+              <td>200.000 - 800.000 TL</td>
+              <td>Proje süresine göre</td>
+            </tr>
+            <tr>
+              <td>Eğitim</td>
+              <td>50.000 - 150.000 TL</td>
+              <td>Personel sayısına göre</td>
+            </tr>
+            <tr>
+              <td>Veri Migrasyonu</td>
+              <td>30.000 - 100.000 TL</td>
+              <td>Veri karmaşıklığına göre</td>
+            </tr>
+            <tr>
+              <td>Özelleştirme</td>
+              <td>50.000 - 300.000 TL</td>
+              <td>Modül sayısına göre</td>
+            </tr>
+            <tr>
+              <td>Entegrasyon</td>
+              <td>20.000 - 150.000 TL</td>
+              <td>Dış sistem sayısına göre</td>
+            </tr>
+            <tr>
+              <td>Donanım/Altyapı</td>
+              <td>50.000 - 200.000 TL</td>
+              <td>Sunucu, terminaller</td>
+            </tr>
+            <tr>
+              <td>Yıllık Bakım/Destek</td>
+              <td>Lisansın %15-20'si</td>
+              <td>Sürekli gider</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>Örnek ROI Hesaplaması (Tahmini):</strong>
+      </p>
+      <ul>
+        <li>
+          <strong>Yıllık Tasarruf Kalemleri (Tahmini):</strong>
+        </li>
+        <li>SKT fire azalması: ~120.000 TL</li>
+        <li>Manuel iş azaltması: ~180.000 TL</li>
+        <li>ÜTS ceza riski: ~80.000 TL</li>
+        <li>Konsinye kayıp azaltması: ~200.000 TL</li>
+        <li>Raporlama süresi tasarrufu: ~50.000 TL</li>
+      </ul>
+      <p>
+        <strong>Toplam Yıllık Tasarruf (Tahmini):</strong> ~630.000 TL
+      </p>
+      <p>
+        <strong>Geri Dönüş Süresi (Tahmini):</strong> 1.5 - 2.5 yıl (ortalama)
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Vendor Değerlendirme Matrisi</summary>
+    <div class="details-content">
+      <p>
+        Yazılım firmalarını değerlendirmek için kullanılacak puanlama matrisi:
+      </p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Değerlendirme Kriteri</th>
+              <th>Ağırlık</th>
+              <th>Puan (1-10)</th>
+              <th>Açıklama</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Medikal Sektör Tecrübesi</strong></td>
+              <td>%20</td>
+              <td></td>
+              <td>Önceki medikal ERP projeleri</td>
+            </tr>
+            <tr>
+              <td><strong>ÜTS/İTS Entegrasyon Kalitesi</strong></td>
+              <td>%15</td>
+              <td></td>
+              <td>Bakanlık API başarı oranı</td>
+            </tr>
+            <tr>
+              <td><strong>FEFO ve Lot Takibi</strong></td>
+              <td>%15</td>
+              <td></td>
+              <td>Stok yönetimi yetenekleri</td>
+            </tr>
+            <tr>
+              <td><strong>e-Fatura (ILAC_TIBBICIHAZ)</strong></td>
+              <td>%10</td>
+              <td></td>
+              <td>Medikal fatura senaryosu</td>
+            </tr>
+            <tr>
+              <td><strong>Referans Müşteriler</strong></td>
+              <td>%10</td>
+              <td></td>
+              <td>Sektördeki başarılı projeler</td>
+            </tr>
+            <tr>
+              <td><strong>TCO ve Fiyatlandırma</strong></td>
+              <td>%10</td>
+              <td></td>
+              <td>Toplam maliyet değeri</td>
+            </tr>
+            <tr>
+              <td><strong>Teknik Destek</strong></td>
+              <td>%8</td>
+              <td></td>
+              <td>Yanıt süresi, 7/24 destek</td>
+            </tr>
+            <tr>
+              <td><strong>Özelleştirme Esnekliği</strong></td>
+              <td>%7</td>
+              <td></td>
+              <td>İş gereksinimlerine uyum</td>
+            </tr>
+            <tr>
+              <td><strong>Ölçeklenebilirlik</strong></td>
+              <td>%5</td>
+              <td></td>
+              <td>Büyüme desteği</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Vendor Seçiminde "Turnusol Soruları"</summary>
+    <div class="details-content">
+      <p>
+        Demo sırasında mutlaka sorulması gereken kritik sorular:
+      </p>
+      <ul>
+        <li>
+          <strong>"Satış yapıldığında ÜTS bildirimi otomatik gidiyor mu?"</strong>
+          <br><em>Cevap "Hayır" ise o yazılım medikal sektöre uygun değil.</em>
+        </li>
+        <li>
+          <strong>"ÜTS sunucusu çökerse ne oluyor? Fatura kesilemez mi?"</strong>
+          <br><em>Doğru cevap: "Kuyruğa alır, bağlantı düzelince kendiliğinden gönderir."</em>
+        </li>
+        <li>
+          <strong>"FEFO kuralı zorunlu mu? Personel atlatabilir mi?"</strong>
+          <br><em>Doğru cevap: "Hard Block ile zorunlu, atlatılamaz."</em>
+        </li>
+        <li>
+          <strong>"Konsinye ürün kullanıldığında otomatik fatura kesiliyor mu?"</strong>
+          <br><em>Doğru cevap: "Evet, tüketim bildirimi + fatura aynı anda."</em>
+        </li>
+        <li>
+          <strong>"Recall durumunda lot bazlı anlık sorgulama yapılabilir mi?"</strong>
+          <br><em>Doğru cevap: "Evet, tek tıkla tüm lokasyonlarda lot arama."</em>
+        </li>
+        <li>
+          <strong>"e-Fatura'da lot/SKT/ÜTS kodu otomatik ekleniyor mu?"</strong>
+          <br><em>Doğru cevap: "Evet, XML yapısına gömülü olarak."</em>
+        </li>
+        <li>
+          <strong>"Kaç medikal firma referansınız var? İsim verebilir misiniz?"</strong>
+          <br><em>En az 3-5 referans istenmeli.</em>
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Mevcut Sistem vs ERP Karşılaştırması</summary>
+    <div class="details-content">
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Kriter</th>
+              <th>Mevcut (Excel/Parçalı)</th>
+              <th>Yeni ERP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ÜTS Bildirim</td>
+              <td>Manuel, portalden</td>
+              <td>Otomatik, anlık</td>
+            </tr>
+            <tr>
+              <td>Stok Takibi</td>
+              <td>Excel, günlük güncelleme</td>
+              <td>Anlık, lot bazlı</td>
+            </tr>
+            <tr>
+              <td>Fatura Kesimi</td>
+              <td>Elle, hata oranı yüksek</td>
+              <td>Otomatik, doğrulama</td>
+            </tr>
+            <tr>
+              <td>FEFO Kuralı</td>
+              <td>İnsan inisiyatifi</td>
+              <td>Sistem zorunlu</td>
+            </tr>
+            <tr>
+              <td>Konsinye Kontrolü</td>
+              <td>Manuel takip, kayıp yüksek</td>
+              <td>Anlık izleme, otomatik fatura</td>
+            </tr>
+            <tr>
+              <td>Raporlama</td>
+              <td>3-5 gün gecikme</td>
+              <td>Gerçek zamanlı</td>
+            </tr>
+            <tr>
+              <td>Denetim Uyumu</td>
+              <td>Riskli, eksik kayıt</td>
+              <td>%100 uyumlu</td>
+            </tr>
+            <tr>
+              <td>Karar Destek</td>
+              <td>İnanç/sezgi</td>
+              <td>Veriye dayalı</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>TCO Karşılaştırma: 5 Yıllık Projeksiyon (Tahmini)</summary>
+    <div class="details-content">
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Kalem</th>
+              <th>Mevcut Sistem (5 yıl) (Tahmini)</th>
+              <th>ERP (5 yıl) (Tahmini)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Manuel İşgücü</td>
+              <td>~450.000 TL</td>
+              <td>~180.000 TL</td>
+            </tr>
+            <tr>
+              <td>SKT Fire</td>
+              <td>~300.000 TL</td>
+              <td>~60.000 TL</td>
+            </tr>
+            <tr>
+              <td>ÜTS Cezaları (risk)</td>
+              <td>~200.000 TL</td>
+              <td>~0 TL</td>
+            </tr>
+            <tr>
+              <td>Konsinye Kayıp</td>
+              <td>~250.000 TL</td>
+              <td>~50.000 TL</td>
+            </tr>
+            <tr>
+              <td>Yazılım Lisans</td>
+              <td>~0 TL</td>
+              <td>~500.000 TL</td>
+            </tr>
+            <tr>
+              <td>Implementasyon</td>
+              <td>~0 TL</td>
+              <td>~300.000 TL</td>
+            </tr>
+            <tr>
+              <td><strong>TOPLAM (Tahmini)</strong></td>
+              <td><strong>~1.200.000 TL</strong></td>
+              <td><strong>~1.090.000 TL</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>5 Yıllık Tasarruf (Tahmini):</strong> ~110.000 TL + Risksiz Operasyon
+      </p>
+    </div>
+  </details>
+
+  <div class="callout">
+    <div class="callout-icon">💡</div>
+    <div class="callout-text">
+      <h4>Önemli Uyarı</h4>
+      <p>
+        Fiyat en düşük teklifi değil, "toplam değer" teklifi seçilmelidir. 
+        Ucuz ama medikal sektöre uyumsuz bir yazılım, pahalı bir hata olacaktır.
+      </p>
+    </div>
+  </div>
+
+  <div class="survey-container">
+    <h2 class="survey-title">© 2026 Mustafa Yazar - Medikal ERP</h2>
+  </div>
+</article>

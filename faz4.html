@@ -1,121 +1,194 @@
 <article class="article-card">
-  <h1>Başarı Kriterleri, Geçiş Planı ve Terimler Sözlüğü</h1>
+  <h1>Güvenlik ve Yetkilendirme</h1>
 
   <p>
-    Başarılı bir dijital dönüşüm, sadece bir yazılım satın almakla bitmez;
-    herkesin aynı dili konuştuğu, hedeflerin net olarak ölçülebildiği ve mevcut
-    operasyonu aksatmayan güvenli bir geçiş planıyla hayata geçer. Bu bölüm,
-    projenin anayasasını ve başarı kriterlerini tanımlar.
+    Medikal sektörde veri güvenliği, hasta gizliliği ve yasal uyum açısından 
+    kritik öneme sahiptir. ERP sistemi, yetkisiz erişimi engelleyen ve tüm 
+    işlemleri izlenebilir kılan güçlü bir güvenlik altyapısı sunmalıdır.
   </p>
 
   <details open>
-    <summary>Temel Kavramlar Sözlüğü (Jargonsuz Açıklamalar)</summary>
+    <summary>Rol Bazlı Erişim Kontrolü (RBAC)</summary>
     <div class="details-content">
       <p>
-        Saha ekibinin ve yöneticilerin geçiş sürecinde sıkça duyacağı teknik
-        terimlerin, işletmemizdeki karşılıkları şunlardır:
+        Her kullanıcı sadece kendi işi için gerekli verilere erişir:
       </p>
       <ul>
         <li>
-          <strong>ÜTS / İTS Entegrasyonu:</strong> Sağlık Bakanlığı'nın
-          Ürün/İlaç Takip Sistemi. ERP sistemimizde bu entegrasyon "insan elini"
-          aradan çıkarır; satılan veya depoya giren ürünün bildirimi arka planda
-          saniyeler içinde devlete iletilir.
+          <strong>Genel Müdür:</strong> Tüm raporlar, dashboard, onay yetkileri
         </li>
         <li>
-          <strong>FEFO (İlk Biten İlk Çıkar):</strong> Raf ömrü (SKT) en yakın
-          olan ürünün önce satılmasını/sevk edilmesini sistemin zorunlu
-          kılmasıdır. Depocunun inisiyatifini kaldırarak tarihi geçip çöpe giden
-          ürün (fire) maliyetini bitirir.
+          <strong>Depo Sorumlusu:</strong> Stok işlemleri, sayım, transfer
         </li>
         <li>
-          <strong>Hard Block (Sistemsel Engel):</strong> Kullanıcının veya
-          yöneticinin bypass edemeyeceği, işlemi kesin olarak durduran kilit
-          mekanizmasıdır. Örneğin; ÜTS bildirimi yapılmamış bir ürünün satılmak
-          istenmesi <em>Hard Block</em> ile engellenir, yasal ceza yenmesinin
-          önüne geçilir.
+          <strong>Satış Temsilcisi:</strong> Müşteri kartı, teklif, satış
         </li>
         <li>
-          <strong>Konsinye (Sanal Depo):</strong> Hastanelere, kliniklere veya
-          saha satış temsilcilerine bırakılan, ancak kullanıldığında
-          faturalandırılan ürünlerdir. ERP'de bu noktalar birer "şube/depo" gibi
-          anlık izlenir, kayıp kaçak sıfırlanır.
+          <strong>Ön Muhasebe:</strong> Fatura, tahsilat, ödeme
         </li>
         <li>
-          <strong>Audit Trail (Denetim İzi):</strong> Sistemdeki her hareketin
-          kim tarafından, saat kaçta yapıldığının ve neyin değiştirildiğinin
-          silinemez kaydıdır. ISO 13485 ve TİTCK denetimlerinde firmanın en
-          büyük yasal güvencesidir.
+          <strong>Kalite Sorumlusu:</strong> ÜTS bildirimleri, iade onayı
+        </li>
+        <li>
+          <strong>Modül Bazlı Yetki:</strong> Kullanıcı sadece yetkili olduğu 
+          modülleri görebilir ve işlem yapabilir
+        </li>
+        <li>
+          <strong>Alan Bazlı Yetki:</strong> Sadece görüntüleme, okuma/yazma, 
+          silme gibi detay seviyesinde kontrol
         </li>
       </ul>
     </div>
   </details>
 
   <details>
-    <summary>Başarıyı Ölçmek: Temel Performans Göstergeleri (KPI)</summary>
+    <summary>Yetkilendirme Matrisi</summary>
     <div class="details-content">
       <p>
-        Yeni sistemin şirketimize kattığı değeri hislerle değil, aşağıdaki net
-        ve ölçülebilir metriklerle (KPI) takip edeceğiz:
+        Departman bazlı işlem yetkilendirme tablosu:
+      </p>
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>İşlem</th>
+              <th>Depo</th>
+              <th>Satış</th>
+              <th>Muhasebe</th>
+              <th>Yönetim</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mal Kabul</td>
+              <td>✓</td>
+              <td>-</td>
+              <td>Görüntü</td>
+              <td>Görüntü</td>
+            </tr>
+            <tr>
+              <td>Satış Faturası Kesme</td>
+              <td>-</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>ÜTS Bildirimi</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>-</td>
+              <td>Görüntü</td>
+            </tr>
+            <tr>
+              <td>Stok Düşme</td>
+              <td>✓</td>
+              <td>✓</td>
+              <td>-</td>
+              <td>Görüntü</td>
+            </tr>
+            <tr>
+              <td>Raporlama</td>
+              <td>Kendi işlemleri</td>
+              <td>Kendi bölgesi</td>
+              <td>Finansal</td>
+              <td>Tümü</td>
+            </tr>
+            <tr>
+              <td>Fiyat Değişikliği</td>
+              <td>-</td>
+              <td>Limitli</td>
+              <td>✓</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>İade Onayı</td>
+              <td>Öneri</td>
+              <td>-</td>
+              <td>Onay</td>
+              <td>✓</td>
+            </tr>
+            <tr>
+              <td>Stok Silme</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Denetim İzi (Audit Trail)</summary>
+    <div class="details-content">
+      <p>
+        Tüm işlemlerin silinmez kaydı - TİTCK ve ISO denetimleri için en büyük kanıt:
       </p>
       <ul>
         <li>
-          <strong>SKT Fire Oranı (Hedef: <%1):</strong> Raf ömrü dolduğu için
-          imha edilen ürünlerin toplam stoka oranı. FEFO ve otomatik uyarı
-          sistemi sayesinde çöpe giden sermaye minimize edilir.
+          <strong>Kim, Ne Zaman, Ne Yaptı:</strong> Her işlemde kullanıcı ID, 
+          tarih/saat, yapılan işlemin detayı
         </li>
         <li>
-          <strong>ÜTS/İTS Bildirim Hata Oranı (Hedef: SIFIR):</strong> Manuel
-          girişler kaldırıldığı için, denetimlerde karşımıza çıkacak
-          "bildirilmemiş lot" veya "gecikmiş bildirim" cezaları tamamen ortadan
-          kalkar.
+          <strong>Eski/Yeni Değer:</strong> Örneğin "fiyat 50 TL'den 55 TL'ye değiştirildi"
         </li>
         <li>
-          <strong
-            >Geri Çağırma (Recall) Müdahale Süresi (Hedef: < 15 Dakika):</strong
-          >
-          Tedarikçiden veya Bakanlık'tan hatalı bir parti (Lot) ürün
-          bildirildiğinde; bu ürünün hangi lokasyonda veya hangi konsinyede
-          olduğunu bulmak ve satışını durdurmak saniyeler sürer.
+          <strong>IP Adresi:</strong> İşlemin hangi cihazdan yapıldığı
         </li>
         <li>
-          <strong>Konsinye Sayım Farkı (Hedef: <%0.5):</strong> Hastanelerde
-          unutulan, faturası kesilmeyen veya kaybolan cihaz/malzeme oranındaki
-          radikal düşüştür. Doğrudan şirketin net kârına etki eder.
+          <strong>Saklama Süresi:</strong> Yasal gerekliliklere uygun minimum 10 yıl
         </li>
       </ul>
     </div>
   </details>
 
   <details>
-    <summary>Operasyonu Durdurmayan Güvenli Geçiş Planı</summary>
+    <summary>Veri Güvenliği ve Şifreleme</summary>
     <div class="details-content">
       <p>
-        ERP geçişi bir gecede, tüm şalterleri kapatarak yapılmaz. Günlük
-        operasyonu kilitlememek için süreç riskleri izole edilmiş fazlara
-        bölünür:
+        Hassas veriler koruma altında:
       </p>
       <ul>
         <li>
-          <strong>Faz 0: Hazırlık ve Veri Temizliği (4-6 Hafta):</strong>
-          Sisteme hiçbir kirli veri alınmaz. Excel'deki eksik barkodlar, KDV
-          oranları, ruhsat bilgileri ve lot geçmişleri bu aşamada temizlenir.
+          <strong>SSL/TLS Şifreleme:</strong> Veriler sunucu ile istemci arasında şifrelenir
         </li>
         <li>
-          <strong>Faz 1: Çekirdek Operasyon (8-12 Hafta):</strong> Mal kabul,
-          lot/SKT takibi, ÜTS entegrasyonu ve e-Dönüşüm (e-Fatura) arka planda
-          kusursuz çalışır hale getirilir.
+          <strong>Veritabanı Şifreleme:</strong> Hassas alanlar şifreli saklanır
         </li>
         <li>
-          <strong>Faz 2: Saha ve Konsinye Satışları (6-8 Hafta):</strong>
-          Perakende satış ve konsinye operasyonları sisteme dahil olur. Personel
-          yeni ekrandan satış yapmaya ve anlık stok düşmeye başlar.
+          <strong>Güçlü Parola Politikası:</strong> Min. 8 karakter, periyodik değişim
         </li>
         <li>
-          <strong>Faz 3: Finans ve Yönetim (4-6 Hafta):</strong> Tüm operasyonel
-          veri aktığı için; Yönetici Ekranları (Dashboard), anlık kârlılık
-          raporları ve resmi muhasebe entegrasyonu devreye girer. Yöneticiler
-          artık şirketi tek ekrandan izlemeye başlar.
+          <strong>Çok Faktörlü Kimlik Doğrulama (MFA):</strong> Yönetici hesapları için
+        </li>
+        <li>
+          <strong>Oturum Yönetimi:</strong> Belirli süre işlem yapılmayan oturumların kapanması
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>KVKK Uyumu ve Medikal Veri Gizliliği</summary>
+    <div class="details-content">
+      <p>
+        Kişisel verilerin korunması kanunu kapsamında:
+      </p>
+      <ul>
+        <li>
+          <strong>Hasta Verileri:</strong> Reçete numarası, hasta bilgileri için açık rıza
+        </li>
+        <li>
+          <strong>Veri İşleme Kaydı:</strong> Hangi verilerin, ne amaçla işlendiğinin kaydı
+        </li>
+        <li>
+          <strong>Anonimleştirme:</strong> Raporlama için hasta kimliklerinin gizlenmesi
+        </li>
+        <li>
+          <strong>Veri Silme:</strong> Yasal saklama süresi dolan verilerin güvenli imhası
         </li>
       </ul>
     </div>
@@ -124,15 +197,10 @@
   <div class="callout">
     <div class="callout-icon">⚠️</div>
     <div class="callout-text">
-      <h4>Geçiş Sürecinin En Kritik Kuralı: "Kirli Veri Tuzağı"</h4>
+      <h4>Güvenlik Testi Önerisi</h4>
       <p>
-        Piyasada başarısız olan ERP projelerinin %80'inin sebebi
-        <strong>kirli veriyi yeni sisteme taşımaktır.</strong> Eğer mevcut
-        Excel'lerinizdeki hatalı SKT'leri, mükerrer barkodları ve eksik ÜTS
-        kodlarını "sistemi kurduktan sonra içeride düzeltiriz" mantığıyla yeni
-        ERP'ye aktarırsanız, yeni yazılımınız 2 ay içinde
-        <em>"çok pahalı bir Excel'e"</em> dönüşür. Veri temizlenmeden ve
-        doğrulanmadan sisteme kesinlikle giriş yapılmaz.
+        ERP canlıya geçtikten sonra periyodik olarak penetrasyon testi ve 
+        güvenlik denetimi yaptırılmalıdır. Sosyal mühendislik testleri de unutulmamalıdır.
       </p>
     </div>
   </div>
