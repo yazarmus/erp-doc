@@ -27,11 +27,11 @@ body {
 
 /* Üst Header */
 header {
-  height: 64px;
+  height: 72px;
   border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 32px;
   position: sticky;
   top: 0;
   background-color: #fff;
@@ -48,7 +48,7 @@ header .logo {
 }
 header .logo span {
   color: var(--text-primary);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* Ana Taşıyıcı */
