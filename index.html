@@ -13,7 +13,7 @@
     </header>
 
     <div class="page-container">
-      <!-- Sol Menü -->
+      <!-- Tek Yol Menü -->
       <aside class="sidebar">
         <h2>Rehber Konuları</h2>
         <ul class="sidebar-menu">
@@ -87,11 +87,7 @@
               id="menu-faz6"
               class="sidebar-link"
               onclick="
-                loadPage(
-                  'faz6.html',
-                  'menu-faz6',
-                  'Raporlama ve İş Zekası',
-                );
+                loadPage('faz6.html', 'menu-faz6', 'Raporlama ve İş Zekası');
                 return false;
               "
               >Raporlama ve İş Zekası</a
@@ -103,11 +99,7 @@
               id="menu-faz4"
               class="sidebar-link"
               onclick="
-                loadPage(
-                  'faz4.html',
-                  'menu-faz4',
-                  'Güvenlik ve Yetkilendirme',
-                );
+                loadPage('faz4.html', 'menu-faz4', 'Güvenlik ve Yetkilendirme');
                 return false;
               "
               >Güvenlik ve Yetkilendirme</a
@@ -151,11 +143,7 @@
               id="menu-faz8"
               class="sidebar-link"
               onclick="
-                loadPage(
-                  'faz8.html',
-                  'menu-faz8',
-                  'Sözlük ve KPI Metrikleri',
-                );
+                loadPage('faz8.html', 'menu-faz8', 'Sözlük ve KPI Metrikleri');
                 return false;
               "
               >Sözlük ve KPI Metrikleri</a
@@ -166,7 +154,7 @@
 
       <!-- İçeriğin Dinamik Olarak Yükleneceği Alan -->
       <main class="main-content">
-        <!-- Breadcrumb (Ekmek Kırıntısı) -->
+        <!-- Ekmeğimizin Peşindeyiz -->
         <div class="breadcrumb">
           <a
             href="#"
@@ -208,7 +196,7 @@
         document.getElementById("current-breadcrumb").innerText =
           breadcrumbTitle;
 
-        // İçeriği çek ve yapıştır
+        // İçeriği çek ve yapıştır gitsin
         fetch(pageUrl)
           .then((response) => {
             if (!response.ok)

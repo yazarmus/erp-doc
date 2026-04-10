@@ -4,7 +4,7 @@
   --text-primary: #1f1f1f;
   --text-secondary: #444746;
   --link-color: #0b57d0;
-  --border-color: #dadce0;
+  --border-color: #a9acaa;
   --bg-body: #ffffff;
   --bg-nav-active: #e8f0fe;
   --bg-callout: #ecf3fe;
@@ -25,7 +25,6 @@ body {
   min-height: 100vh;
 }
 
-/* Üst Header */
 header {
   height: 72px;
   border-bottom: 1px solid var(--border-color);
@@ -50,7 +49,6 @@ header .logo span {
   font-weight: 700;
 }
 
-/* Ana Taşıyıcı */
 .page-container {
   display: flex;
   max-width: 1400px;
@@ -59,7 +57,6 @@ header .logo span {
   flex: 1;
 }
 
-/* Sol Menü (Sidebar) */
 .sidebar {
   width: 280px;
   padding: 24px 0;
@@ -103,7 +100,6 @@ header .logo span {
   font-weight: 500;
 }
 
-/* İçerik Alanı */
 .main-content {
   flex: 1;
   padding: 40px 24px;
@@ -124,7 +120,6 @@ header .logo span {
   text-decoration: underline;
 }
 
-/* Makale Kartı */
 .article-card {
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -165,7 +160,6 @@ li {
   margin-bottom: 8px;
 }
 
-/* Google Tarzı Akordeon (Zippy) */
 details {
   border-top: 1px solid var(--border-color);
   padding: 0;
@@ -208,7 +202,6 @@ details[open] summary::after {
   font-size: 15px;
 }
 
-/* Bilgi / Uyarı Kutusu */
 .callout {
   background-color: var(--bg-callout);
   border: 1px solid var(--link-color);
@@ -233,7 +226,6 @@ details[open] summary::after {
   color: var(--text-primary);
 }
 
-/* Anket Alanı */
 .survey-container {
   margin-top: 60px;
   padding-top: 30px;
@@ -263,9 +255,6 @@ details[open] summary::after {
   background-color: #f1f3f4;
 }
 
-/* =========================================
-   MOBİL VE TABLET UYUMLULUK (RESPONSIVE)
-========================================= */
 @media (max-width: 900px) {
   .page-container {
     flex-direction: column; /* Sütun yapısına çevir */
@@ -315,9 +304,6 @@ details[open] summary::after {
   }
 }
 
-/* =========================================
-   KARŞILAŞTIRMA TABLOLARI
-========================================= */
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
@@ -346,7 +332,6 @@ details[open] summary::after {
   background-color: #f1f3f4;
 }
 
-/* TD içindeki UL için */
 .comparison-table td ul {
   margin: 0;
   padding-left: 16px;
@@ -357,7 +342,6 @@ details[open] summary::after {
   font-size: 13px;
 }
 
-/* Check işareti için */
 .comparison-table td:contains("✓") {
   color: #0f9d58;
   font-weight: 600;
@@ -369,7 +353,6 @@ details[open] summary::after {
   text-align: center;
 }
 
-/* Mobilde tablo kaydırma */
 .table-wrapper {
   overflow-x: auto;
   margin: 16px 0;
