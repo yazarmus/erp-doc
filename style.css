@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --text-primary: #1f1f1f;
+  --text-secondary: #444746;
+  --link-color: #0b57d0;
+  --border-color: #dadce0;
+  --bg-body: #ffffff;
+  --bg-nav-active: #e8f0fe;
+  --bg-callout: #ecf3fe;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-body);
+  margin: 0;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Üst Header */
+header {
+  height: 64px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 100;
+}
+
+header .logo {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .logo span {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Ana Taşıyıcı */
+.page-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  flex: 1;
+}
+
+/* Sol Menü (Sidebar) */
+.sidebar {
+  width: 280px;
+  padding: 24px 0;
+  position: sticky;
+  top: 64px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  font-size: 14px;
+  padding: 0 24px;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-link {
+  display: block;
+  padding: 10px 24px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 0 24px 24px 0;
+  margin-right: 16px;
+  transition: background 0.2s;
+}
+
+.sidebar-link:hover {
+  background-color: #f1f3f4;
+}
+.sidebar-link.active {
+  background-color: var(--bg-nav-active);
+  color: var(--link-color);
+  font-weight: 500;
+}
+
+/* İçerik Alanı */
+.main-content {
+  flex: 1;
+  padding: 40px 24px;
+  max-width: 860px;
+}
+
+.breadcrumb {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+.breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* Makale Kartı */
+.article-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 48px;
+  background: #fff;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 24px;
+  color: var(--text-secondary);
+}
+p {
+  margin-bottom: 16px;
+  color: #3c4043;
+}
+ul,
+ol {
+  padding-left: 24px;
+  margin-bottom: 24px;
+  color: #3c4043;
+}
+li {
+  margin-bottom: 8px;
+}
+
+/* Google Tarzı Akordeon (Zippy) */
+details {
+  border-top: 1px solid var(--border-color);
+  padding: 0;
+}
+details:last-of-type {
+  border-bottom: 1px solid var(--border-color);
+}
+summary {
+  font-size: 16px;
+  color: var(--link-color);
+  cursor: pointer;
+  font-weight: 500;
+  list-style: none;
+  display: block;
+  position: relative;
+  padding: 16px 32px 16px 0;
+  outline: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::after {
+  content: "";
+  background: no-repeat center;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0iIzFhNzNlOCI+PHBhdGggZD0iTTE0LjgzIDE2LjQyTDI0IDI1LjU5bDkuMTctOS4xN0wzNiAxOS4yNWwtMTIgMTItMTItMTJ6Ii8+PHBhdGggZD0iTTAtLjc1aDQ4djQ4SDB6IiBmaWxsPSJub25lIi8+PC9zdmc+);
+  background-size: 1.5rem;
+  height: 1.375rem;
+  width: 1.375rem;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  margin-top: -0.6875rem;
+  transition: transform 0.2s ease;
+}
+details[open] summary::after {
+  transform: scaleY(-1);
+}
+.details-content {
+  padding: 0 0 24px 0;
+  font-size: 15px;
+}
+
+/* Bilgi / Uyarı Kutusu */
+.callout {
+  background-color: var(--bg-callout);
+  border: 1px solid var(--link-color);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  gap: 16px;
+  margin: 32px 0;
+}
+.callout-icon {
+  color: var(--link-color);
+  font-size: 24px;
+  font-weight: bold;
+}
+.callout-text p {
+  margin: 0;
+  font-size: 14px;
+}
+.callout-text h4 {
+  margin: 0 0 8px 0;
+  font-size: 15px;
+  color: var(--text-primary);
+}
+
+/* Anket Alanı */
+.survey-container {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.survey-title {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+}
+.btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  color: var(--link-color);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background-color: #f1f3f4;
+}
+
+/* =========================================
+   MOBİL VE TABLET UYUMLULUK (RESPONSIVE)
+========================================= */
+@media (max-width: 900px) {
+  .page-container {
+    flex-direction: column; /* Sütun yapısına çevir */
+  }
+
+  .main-content {
+    order: 1; /* İçerik ÖNCE gelsin */
+    padding: 24px 16px;
+    max-width: 100%;
+  }
+
+  .sidebar {
+    order: 2; /* Sol Menü SONRA (sayfa altına) gelsin */
+    width: 100%;
+    height: auto;
+    position: static; /* Sabitliği iptal et */
+    padding: 24px 0;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .sidebar-link {
+    border-radius: 8px; /* Mobilde hap tasarım yerine buton tarzı köşeler */
+    margin: 4px 16px;
+  }
+
+  .article-card {
+    padding: 24px; /* Mobilde dar ekranlarda kenar boşluklarını azalt */
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .survey-container {
+    flex-direction: column; /* Butonları alt alta al */
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .callout {
+    flex-direction: column; /* İkon ve yazıyı mobilde alt alta al */
+    gap: 8px;
+  }
+}

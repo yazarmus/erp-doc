@@ -1,0 +1,156 @@
+<article class="article-card">
+  <h1>Modül ve Yasal Gereksinimler: Doğru Medikal ERP Nasıl Seçilir?</h1>
+
+  <p>
+    Medikal sektör, hata toleransı sıfır olan ve yasal denetimlerin (TİTCK, GİB,
+    SGK) her geçen gün sıkılaştığı bir alandır. Mobilya veya tekstil firmaları
+    için üretilmiş standart bir ERP yazılımı, medikal operasyonların hassas
+    yapısını kaldıramaz. Seçeceğimiz sistemde
+    <strong
+      >aşağıdaki modül ve özellikler "opsiyonel" değil, "yasal ve operasyonel
+      zorunluluktur".</strong
+    >
+  </p>
+
+  <details open>
+    <summary>%100 İzlenebilirlik ve Seri / Lot Takibi (FEFO Kuralı)</summary>
+    <div class="details-content">
+      <p>
+        Medikal ürünlerde barkod tek başına yeterli değildir; her ürünün bir Lot
+        (Parti) numarası ve SKT'si (Son Kullanma Tarihi) vardır.
+      </p>
+      <ul>
+        <li>
+          <strong>FEFO Kuralı (İlk Biten İlk Çıkar):</strong> Sistem, depodan
+          şubeye veya müşteriye ürün çıkışı yapılırken, personelin kafasına göre
+          ürün almasını engellemelidir. SKT'si en yakın olan ürünü
+          <em>sistem</em> seçmeli ve sadece o lotun çıkışına izin vermelidir.
+        </li>
+        <li>
+          <strong>Geri Çağırma (Recall) Güvencesi:</strong> Hatalı bir üretim
+          serisi (Lot) tespit edildiğinde, sistem saniyeler içinde o lotun hangi
+          depoda, hangi konsinyede veya hangi müşteride olduğunu dökebilmelidir.
+          Geleneksel sistemlerde günler süren bu işlem, ERP ile tek tıkla
+          yapılır ve hasta güvenliği riski sıfırlanır.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Kusursuz ÜTS & İTS Entegrasyonu</summary>
+    <div class="details-content">
+      <p>
+        Ürün/İlaç Takip Sistemi (ÜTS/İTS) bildirimleri, operasyonun sonuna
+        eklenen bir "veri giriş yükü" olmamalıdır. Sistem, Bakanlık
+        sunucularıyla anlık (API üzerinden) konuşmalıdır.
+      </p>
+      <ul>
+        <li>
+          <strong>Otomatik Tetikleyiciler:</strong> Mal kabul yapıldığında
+          <em>Alış Bildirimi</em>, transfer yapıldığında
+          <em>Sevkiyat Bildirimi</em>, perakende fatura kesildiğinde
+          <em>Verme Bildirimi</em> ve konsinyeden kullanım olduğunda
+          <em>Tüketim Bildirimi</em> insan müdahalesi olmadan arka planda
+          otomatik gitmelidir.
+        </li>
+        <li>
+          <strong>Hard-Block (Sistemsel Engel):</strong> Bir ürünün ÜTS alış
+          bildirimi başarıyla tamamlanmadan, o ürün satışa veya transfere
+          açılamamalıdır (Sistem kilitler). Bu kural, yasal cezaları kesin
+          olarak önler.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      Tam Entegre Ön Muhasebe ve "ILAC_TIBBICIHAZ" e-Fatura Senaryosu
+    </summary>
+    <div class="details-content">
+      <p>
+        Türkiye'deki e-Dönüşüm mevzuatı gereği, medikal cihaz ve ilaç
+        faturalarında özel senaryolar kullanılmaktadır.
+      </p>
+      <p>
+        Sistemin ön muhasebe modülü, GİB (Gelir İdaresi Başkanlığı) ile tam
+        uyumlu olmalı ve kesilen her e-Fatura veya e-İrsaliyenin XML yapısının
+        içine
+        <strong
+          >satılan ürünün ÜTS Kodunu, Lot/Batch numarasını ve SKT'sini otomatik
+          olarak gömmelidir.</strong
+        >
+        SGK ve kurum iadelerinin en büyük sebebi olan "faturada lot eksikliği"
+        veya "ÜTS uyuşmazlığı" sorunları bu sayede tarihe karışır. Ayrı bir
+        e-Fatura portalı kullanmaya gerek kalmaz.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      WMS (Depo Yönetim Sistemi) ve Barkod / Karekod (QR) Mimarisi
+    </summary>
+    <div class="details-content">
+      <p>
+        Fiziki hareketler ile bilgisayardaki veriler ancak el terminalleri ve
+        barkod okuyucular sayesinde senkronize kalabilir.
+      </p>
+      <p>
+        Personel gelen ürünü el terminaliyle okuttuğunda; cihaz global UDI veya
+        karekod içindeki veriyi (Ürün Kodu + Lot + SKT) tek seferde ayrıştırmalı
+        ve sisteme kaydetmelidir. Transferlerde veya periyodik sayımlarında
+        barkod okutularak <strong>sayım farkları (kayıp/kaçak)</strong> anında
+        tespit edilmelidir.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Anlık Maliyet Analizi ve Karlılık (Finansal Görünürlük)</summary>
+    <div class="details-content">
+      <p>
+        Yöneticilerin şirketi verilerle yönetebilmesi için "Anlık Karlılık"
+        hayati bir metriktir.
+      </p>
+      <ul>
+        <li>
+          <strong>Hareketli Ortalama / FIFO Maliyetlendirme:</strong> Satın alma
+          departmanı döviz kuru dalgalanmalarıyla farklı fiyatlardan ürün
+          aldığında, sistem her bir lotun giriş maliyetini ayrı tutmalıdır.
+        </li>
+        <li>
+          <strong>Satış Anında Net Kâr:</strong> Personel bir teklif
+          oluştururken ya da fatura keserken, o anki güncel maliyetler üzerinden
+          brüt kârı görebilmelidir. Ay sonunu beklemeden, güncel ciro ve
+          kârlılık "Yönetim Ekranı (Dashboard)" üzerinden izlenebilir olmalıdır.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="callout">
+    <div class="callout-icon">💡</div>
+    <div class="callout-text">
+      <h4>Yazılım Firmalarına Sorulacak "Turnusol Kağıdı" Sorusu</h4>
+      <p>
+        Demo aşamasında tedarikçi firmaya şu soruyu sorun:
+        <em
+          >"Satış temsilcisi barkodu okutup faturayı kestiğinde, ÜTS çıkış
+          bildirimi otomatik gidiyor mu? Ve ÜTS sunucusu o an çökükse, sistem
+          faturayı bekletip ÜTS geldiğinde kendi kendine kuyruktan atıyor
+          mu?"</em
+        >
+        Eğer cevap "Hayır, personelin portalden manuel yapması lazım" ise, o
+        yazılım medikal sektörün yasal risklerini çözemez.
+      </p>
+    </div>
+  </div>
+
+  <div class="survey-container">
+    <h2 class="survey-title">Bu sayfa size yardımcı oldu mu?</h2>
+    <button class="btn">Evet</button>
+    <button class="btn">Hayır</button>
+  </div>
+</article>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medikal ERP Kılavuzu - Google Destek Konsepti</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Üst Bar -->
+    <header>
+      <div class="logo">☰ <span>Medikal ERP Dönüşüm Merkezi</span></div>
+    </header>
+
+    <div class="page-container">
+      <!-- Sol Menü -->
+      <aside class="sidebar">
+        <h2>Rehber Konuları</h2>
+        <ul class="sidebar-menu">
+          <li>
+            <a
+              href="#"
+              id="menu-faz1"
+              class="sidebar-link active"
+              onclick="
+                loadPage(
+                  'faz1.html',
+                  'menu-faz1',
+                  'Neden ERP? (Yönetici Özeti)',
+                );
+                return false;
+              "
+              >Neden ERP? (Yönetici Özeti)</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="menu-faz2"
+              class="sidebar-link"
+              onclick="
+                loadPage(
+                  'faz2.html',
+                  'menu-faz2',
+                  'Modül ve Yasal Gereksinimler',
+                );
+                return false;
+              "
+              >Modül ve Yasal Gereksinimler</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="menu-faz3"
+              class="sidebar-link"
+              onclick="
+                loadPage(
+                  'faz3.html',
+                  'menu-faz3',
+                  'Uçtan Uca Operasyon Senaryoları',
+                );
+                return false;
+              "
+              >Uçtan Uca Operasyon Senaryoları</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              id="menu-faz4"
+              class="sidebar-link"
+              onclick="
+                loadPage('faz4.html', 'menu-faz4', 'Sözlük ve KPI Metrikleri');
+                return false;
+              "
+              >Sözlük ve KPI Metrikleri</a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <!-- İçeriğin Dinamik Olarak Yükleneceği Alan -->
+      <main class="main-content">
+        <!-- Breadcrumb (Ekmek Kırıntısı) -->
+        <div class="breadcrumb">
+          <a
+            href="#"
+            onclick="
+              loadPage('faz1.html', 'menu-faz1', 'Neden ERP? (Yönetici Özeti)');
+              return false;
+            "
+            >Medikal ERP Rehberi</a
+          >
+          &gt; <span id="current-breadcrumb">Neden ERP? (Yönetici Özeti)</span>
+        </div>
+
+        <div id="content-area">
+          <p>İçerik yükleniyor...</p>
+        </div>
+      </main>
+    </div>
+
+    <!-- Dinamik Yükleme Scripti -->
+    <script>
+      // Sayfa yüklendiğinde ilk fazı çağır
+      document.addEventListener("DOMContentLoaded", () => {
+        loadPage("faz1.html", "menu-faz1", "Neden ERP? (Yönetici Özeti)");
+      });
+
+      function loadPage(pageUrl, menuId, breadcrumbTitle) {
+        // Menülerdeki 'active' sınıfını temizle
+        document
+          .querySelectorAll(".sidebar-link")
+          .forEach((link) => link.classList.remove("active"));
+
+        // Tıklanan menüyü veya breadcrumb'tan tetiklenen menüyü aktif yap
+        const activeMenu = document.getElementById(menuId);
+        if (activeMenu) {
+          activeMenu.classList.add("active");
+        }
+
+        // Üstteki breadcrumb yazısını güncelle
+        document.getElementById("current-breadcrumb").innerText =
+          breadcrumbTitle;
+
+        // İçeriği çek ve yapıştır
+        fetch(pageUrl)
+          .then((response) => {
+            if (!response.ok)
+              throw new Error("Ağ hatası veya dosya bulunamadı.");
+            return response.text();
+          })
+          .then((html) => {
+            document.getElementById("content-area").innerHTML = html;
+            window.scrollTo(0, 0); // Sayfa başına git
+          })
+          .catch((error) => {
+            document.getElementById("content-area").innerHTML = `
+                        <div class="article-card">
+                            <h1>Sayfa Yüklenemedi</h1>
+                            <p>Yerel dosyalarda fetch API kullanabilmek için bir lokal sunucu (örn: VS Code Live Server) kullanmanız gerekebilir.</p>
+                        </div>`;
+          });
+      }
+    </script>
+  </body>
+</html>

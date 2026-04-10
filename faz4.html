@@ -1,0 +1,145 @@
+<article class="article-card">
+  <h1>Başarı Kriterleri, Geçiş Planı ve Terimler Sözlüğü</h1>
+
+  <p>
+    Başarılı bir dijital dönüşüm, sadece bir yazılım satın almakla bitmez;
+    herkesin aynı dili konuştuğu, hedeflerin net olarak ölçülebildiği ve mevcut
+    operasyonu aksatmayan güvenli bir geçiş planıyla hayata geçer. Bu bölüm,
+    projenin anayasasını ve başarı kriterlerini tanımlar.
+  </p>
+
+  <details open>
+    <summary>Temel Kavramlar Sözlüğü (Jargonsuz Açıklamalar)</summary>
+    <div class="details-content">
+      <p>
+        Saha ekibinin ve yöneticilerin geçiş sürecinde sıkça duyacağı teknik
+        terimlerin, işletmemizdeki karşılıkları şunlardır:
+      </p>
+      <ul>
+        <li>
+          <strong>ÜTS / İTS Entegrasyonu:</strong> Sağlık Bakanlığı'nın
+          Ürün/İlaç Takip Sistemi. ERP sistemimizde bu entegrasyon "insan elini"
+          aradan çıkarır; satılan veya depoya giren ürünün bildirimi arka planda
+          saniyeler içinde devlete iletilir.
+        </li>
+        <li>
+          <strong>FEFO (İlk Biten İlk Çıkar):</strong> Raf ömrü (SKT) en yakın
+          olan ürünün önce satılmasını/sevk edilmesini sistemin zorunlu
+          kılmasıdır. Depocunun inisiyatifini kaldırarak tarihi geçip çöpe giden
+          ürün (fire) maliyetini bitirir.
+        </li>
+        <li>
+          <strong>Hard Block (Sistemsel Engel):</strong> Kullanıcının veya
+          yöneticinin bypass edemeyeceği, işlemi kesin olarak durduran kilit
+          mekanizmasıdır. Örneğin; ÜTS bildirimi yapılmamış bir ürünün satılmak
+          istenmesi <em>Hard Block</em> ile engellenir, yasal ceza yenmesinin
+          önüne geçilir.
+        </li>
+        <li>
+          <strong>Konsinye (Sanal Depo):</strong> Hastanelere, kliniklere veya
+          saha satış temsilcilerine bırakılan, ancak kullanıldığında
+          faturalandırılan ürünlerdir. ERP'de bu noktalar birer "şube/depo" gibi
+          anlık izlenir, kayıp kaçak sıfırlanır.
+        </li>
+        <li>
+          <strong>Audit Trail (Denetim İzi):</strong> Sistemdeki her hareketin
+          kim tarafından, saat kaçta yapıldığının ve neyin değiştirildiğinin
+          silinemez kaydıdır. ISO 13485 ve TİTCK denetimlerinde firmanın en
+          büyük yasal güvencesidir.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Başarıyı Ölçmek: Temel Performans Göstergeleri (KPI)</summary>
+    <div class="details-content">
+      <p>
+        Yeni sistemin şirketimize kattığı değeri hislerle değil, aşağıdaki net
+        ve ölçülebilir metriklerle (KPI) takip edeceğiz:
+      </p>
+      <ul>
+        <li>
+          <strong>SKT Fire Oranı (Hedef: <%1):</strong> Raf ömrü dolduğu için
+          imha edilen ürünlerin toplam stoka oranı. FEFO ve otomatik uyarı
+          sistemi sayesinde çöpe giden sermaye minimize edilir.
+        </li>
+        <li>
+          <strong>ÜTS/İTS Bildirim Hata Oranı (Hedef: SIFIR):</strong> Manuel
+          girişler kaldırıldığı için, denetimlerde karşımıza çıkacak
+          "bildirilmemiş lot" veya "gecikmiş bildirim" cezaları tamamen ortadan
+          kalkar.
+        </li>
+        <li>
+          <strong
+            >Geri Çağırma (Recall) Müdahale Süresi (Hedef: < 15 Dakika):</strong
+          >
+          Tedarikçiden veya Bakanlık'tan hatalı bir parti (Lot) ürün
+          bildirildiğinde; bu ürünün hangi lokasyonda veya hangi konsinyede
+          olduğunu bulmak ve satışını durdurmak saniyeler sürer.
+        </li>
+        <li>
+          <strong>Konsinye Sayım Farkı (Hedef: <%0.5):</strong> Hastanelerde
+          unutulan, faturası kesilmeyen veya kaybolan cihaz/malzeme oranındaki
+          radikal düşüştür. Doğrudan şirketin net kârına etki eder.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Operasyonu Durdurmayan Güvenli Geçiş Planı</summary>
+    <div class="details-content">
+      <p>
+        ERP geçişi bir gecede, tüm şalterleri kapatarak yapılmaz. Günlük
+        operasyonu kilitlememek için süreç riskleri izole edilmiş fazlara
+        bölünür:
+      </p>
+      <ul>
+        <li>
+          <strong>Faz 0: Hazırlık ve Veri Temizliği (4-6 Hafta):</strong>
+          Sisteme hiçbir kirli veri alınmaz. Excel'deki eksik barkodlar, KDV
+          oranları, ruhsat bilgileri ve lot geçmişleri bu aşamada temizlenir.
+        </li>
+        <li>
+          <strong>Faz 1: Çekirdek Operasyon (8-12 Hafta):</strong> Mal kabul,
+          lot/SKT takibi, ÜTS entegrasyonu ve e-Dönüşüm (e-Fatura) arka planda
+          kusursuz çalışır hale getirilir.
+        </li>
+        <li>
+          <strong>Faz 2: Saha ve Konsinye Satışları (6-8 Hafta):</strong>
+          Perakende satış ve konsinye operasyonları sisteme dahil olur. Personel
+          yeni ekrandan satış yapmaya ve anlık stok düşmeye başlar.
+        </li>
+        <li>
+          <strong>Faz 3: Finans ve Yönetim (4-6 Hafta):</strong> Tüm operasyonel
+          veri aktığı için; Yönetici Ekranları (Dashboard), anlık kârlılık
+          raporları ve resmi muhasebe entegrasyonu devreye girer. Yöneticiler
+          artık şirketi tek ekrandan izlemeye başlar.
+        </li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="callout">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-text">
+      <h4>Geçiş Sürecinin En Kritik Kuralı: "Kirli Veri Tuzağı"</h4>
+      <p>
+        Piyasada başarısız olan ERP projelerinin %80'inin sebebi
+        <strong>kirli veriyi yeni sisteme taşımaktır.</strong> Eğer mevcut
+        Excel'lerinizdeki hatalı SKT'leri, mükerrer barkodları ve eksik ÜTS
+        kodlarını "sistemi kurduktan sonra içeride düzeltiriz" mantığıyla yeni
+        ERP'ye aktarırsanız, yeni yazılımınız 2 ay içinde
+        <em>"çok pahalı bir Excel'e"</em> dönüşür. Veri temizlenmeden ve
+        doğrulanmadan sisteme kesinlikle giriş yapılmaz.
+      </p>
+    </div>
+  </div>
+
+  <div class="survey-container">
+    <h2 class="survey-title">Bu sayfa size yardımcı oldu mu?</h2>
+    <button class="btn">Evet</button>
+    <button class="btn">Hayır</button>
+  </div>
+</article>
