@@ -2,17 +2,15 @@
   <h1>Güvenlik ve Yetkilendirme</h1>
 
   <p>
-    Medikal sektörde veri güvenliği, hasta gizliliği ve yasal uyum açısından 
-    kritik öneme sahiptir. ERP sistemi, yetkisiz erişimi engelleyen ve tüm 
+    Medikal sektörde veri güvenliği, hasta gizliliği ve yasal uyum açısından
+    kritik öneme sahiptir. ERP sistemi, yetkisiz erişimi engelleyen ve tüm
     işlemleri izlenebilir kılan güçlü bir güvenlik altyapısı sunmalıdır.
   </p>
 
   <details open>
     <summary>Rol Bazlı Erişim Kontrolü (RBAC)</summary>
     <div class="details-content">
-      <p>
-        Her kullanıcı sadece kendi işi için gerekli verilere erişir:
-      </p>
+      <p>Her kullanıcı sadece kendi işi için gerekli verilere erişir:</p>
       <ul>
         <li>
           <strong>Genel Müdür:</strong> Tüm raporlar, dashboard, onay yetkileri
@@ -20,21 +18,15 @@
         <li>
           <strong>Depo Sorumlusu:</strong> Stok işlemleri, sayım, transfer
         </li>
+        <li><strong>Satış Temsilcisi:</strong> Müşteri kartı, teklif, satış</li>
+        <li><strong>Ön Muhasebe:</strong> Fatura, tahsilat, ödeme</li>
+        <li><strong>Kalite Sorumlusu:</strong> ÜTS bildirimleri, iade onayı</li>
         <li>
-          <strong>Satış Temsilcisi:</strong> Müşteri kartı, teklif, satış
-        </li>
-        <li>
-          <strong>Ön Muhasebe:</strong> Fatura, tahsilat, ödeme
-        </li>
-        <li>
-          <strong>Kalite Sorumlusu:</strong> ÜTS bildirimleri, iade onayı
-        </li>
-        <li>
-          <strong>Modül Bazlı Yetki:</strong> Kullanıcı sadece yetkili olduğu 
+          <strong>Modül Bazlı Yetki:</strong> Kullanıcı sadece yetkili olduğu
           modülleri görebilir ve işlem yapabilir
         </li>
         <li>
-          <strong>Alan Bazlı Yetki:</strong> Sadece görüntüleme, okuma/yazma, 
+          <strong>Alan Bazlı Yetki:</strong> Sadece görüntüleme, okuma/yazma,
           silme gibi detay seviyesinde kontrol
         </li>
       </ul>
@@ -44,9 +36,7 @@
   <details>
     <summary>Yetkilendirme Matrisi</summary>
     <div class="details-content">
-      <p>
-        Departman bazlı işlem yetkilendirme tablosu:
-      </p>
+      <p>Departman bazlı işlem yetkilendirme tablosu:</p>
       <div class="table-wrapper">
         <table class="comparison-table">
           <thead>
@@ -125,21 +115,22 @@
     <summary>Denetim İzi (Audit Trail)</summary>
     <div class="details-content">
       <p>
-        Tüm işlemlerin silinmez kaydı - TİTCK ve ISO denetimleri için en büyük kanıt:
+        Tüm işlemlerin silinmez kaydı - TİTCK ve ISO denetimleri için en büyük
+        kanıt:
       </p>
       <ul>
         <li>
-          <strong>Kim, Ne Zaman, Ne Yaptı:</strong> Her işlemde kullanıcı ID, 
+          <strong>Kim, Ne Zaman, Ne Yaptı:</strong> Her işlemde kullanıcı ID,
           tarih/saat, yapılan işlemin detayı
         </li>
         <li>
-          <strong>Eski/Yeni Değer:</strong> Örneğin "fiyat 50 TL'den 55 TL'ye değiştirildi"
+          <strong>Eski/Yeni Değer:</strong> Örneğin "fiyat 50 TL'den 55 TL'ye
+          değiştirildi"
         </li>
+        <li><strong>IP Adresi:</strong> İşlemin hangi cihazdan yapıldığı</li>
         <li>
-          <strong>IP Adresi:</strong> İşlemin hangi cihazdan yapıldığı
-        </li>
-        <li>
-          <strong>Saklama Süresi:</strong> Yasal gerekliliklere uygun minimum 10 yıl
+          <strong>Saklama Süresi:</strong> Yasal gerekliliklere uygun minimum 10
+          yıl
         </li>
       </ul>
     </div>
@@ -148,24 +139,26 @@
   <details>
     <summary>Veri Güvenliği ve Şifreleme</summary>
     <div class="details-content">
-      <p>
-        Hassas veriler koruma altında:
-      </p>
+      <p>Hassas veriler koruma altında:</p>
       <ul>
         <li>
-          <strong>SSL/TLS Şifreleme:</strong> Veriler sunucu ile istemci arasında şifrelenir
+          <strong>SSL/TLS Şifreleme:</strong> Veriler sunucu ile istemci
+          arasında şifrelenir
         </li>
         <li>
           <strong>Veritabanı Şifreleme:</strong> Hassas alanlar şifreli saklanır
         </li>
         <li>
-          <strong>Güçlü Parola Politikası:</strong> Min. 8 karakter, periyodik değişim
+          <strong>Güçlü Parola Politikası:</strong> Min. 8 karakter, periyodik
+          değişim
         </li>
         <li>
-          <strong>Çok Faktörlü Kimlik Doğrulama (MFA):</strong> Yönetici hesapları için
+          <strong>Çok Faktörlü Kimlik Doğrulama (MFA):</strong> Yönetici
+          hesapları için
         </li>
         <li>
-          <strong>Oturum Yönetimi:</strong> Belirli süre işlem yapılmayan oturumların kapanması
+          <strong>Oturum Yönetimi:</strong> Belirli süre işlem yapılmayan
+          oturumların kapanması
         </li>
       </ul>
     </div>
@@ -174,21 +167,23 @@
   <details>
     <summary>KVKK Uyumu ve Medikal Veri Gizliliği</summary>
     <div class="details-content">
-      <p>
-        Kişisel verilerin korunması kanunu kapsamında:
-      </p>
+      <p>Kişisel verilerin korunması kanunu kapsamında:</p>
       <ul>
         <li>
-          <strong>Hasta Verileri:</strong> Reçete numarası, hasta bilgileri için açık rıza
+          <strong>Hasta Verileri:</strong> Reçete numarası, hasta bilgileri için
+          açık rıza
         </li>
         <li>
-          <strong>Veri İşleme Kaydı:</strong> Hangi verilerin, ne amaçla işlendiğinin kaydı
+          <strong>Veri İşleme Kaydı:</strong> Hangi verilerin, ne amaçla
+          işlendiğinin kaydı
         </li>
         <li>
-          <strong>Anonimleştirme:</strong> Raporlama için hasta kimliklerinin gizlenmesi
+          <strong>Anonimleştirme:</strong> Raporlama için hasta kimliklerinin
+          gizlenmesi
         </li>
         <li>
-          <strong>Veri Silme:</strong> Yasal saklama süresi dolan verilerin güvenli imhası
+          <strong>Veri Silme:</strong> Yasal saklama süresi dolan verilerin
+          güvenli imhası
         </li>
       </ul>
     </div>
@@ -199,13 +194,16 @@
     <div class="callout-text">
       <h4>Güvenlik Testi Önerisi</h4>
       <p>
-        ERP canlıya geçtikten sonra periyodik olarak penetrasyon testi ve 
-        güvenlik denetimi yaptırılmalıdır. Sosyal mühendislik testleri de unutulmamalıdır.
+        ERP canlıya geçtikten sonra periyodik olarak penetrasyon testi ve
+        güvenlik denetimi yaptırılmalıdır. Sosyal mühendislik testleri de
+        unutulmamalıdır.
       </p>
     </div>
   </div>
 
   <div class="survey-container">
-    <h2 class="survey-title">© 2026 Mustafa Yazar - Medikal ERP</h2>
+    <h2 class="survey-title">
+      © 2026 <a href="mailto:yazarmus@gmail.com">Mustafa Yazar</a> - Medikal ERP
+    </h2>
   </div>
 </article>

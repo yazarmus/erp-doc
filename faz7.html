@@ -2,35 +2,35 @@
   <h1>Proje Uygulama Yol Haritası</h1>
 
   <p>
-    ERP geçişi bir yazılım kurulumu değil, şirket çapında bir dönüşüm projesidir. 
-    Başarılı bir uygulama için detaylı plan ve disiplinli yürütme gerekir.
+    ERP geçişi bir yazılım kurulumu değil, şirket çapında bir dönüşüm
+    projesidir. Başarılı bir uygulama için detaylı plan ve disiplinli yürütme
+    gerekir.
   </p>
 
   <details open>
     <summary>Faz 0: Hazırlık ve Veri Temizliği (4-6 Hafta)</summary>
     <div class="details-content">
-      <p>
-        Projenin en kritik aşaması - temiz veri olmadan başarı imkansızdır:
-      </p>
+      <p>Projenin en kritik aşaması - temiz veri olmadan başarı imkansızdır:</p>
       <ul>
         <li>
-          <strong>Mevcut Durum Tespiti:</strong> Kullanılan tüm sistemlerin (Excel, 
-          eski yazılımlar, manuel defterler) envanterinin çıkarılması
+          <strong>Mevcut Durum Tespiti:</strong> Kullanılan tüm sistemlerin
+          (Excel, eski yazılımlar, manuel defterler) envanterinin çıkarılması
         </li>
         <li>
-          <strong>Veri Temizliği:</strong> Eksik barkodların tamamlanması, hatalı SKT'lerin 
-          düzeltilmesi, mükerrer müşteri kayıtlarının birleştirilmesi
+          <strong>Veri Temizliği:</strong> Eksik barkodların tamamlanması,
+          hatalı SKT'lerin düzeltilmesi, mükerrer müşteri kayıtlarının
+          birleştirilmesi
         </li>
         <li>
-          <strong>Temel Veri Girişi:</strong> Ürün kartları, müşteri kartları, tedarikçi 
-          kartları, çalışan bilgileri
+          <strong>Temel Veri Girişi:</strong> Ürün kartları, müşteri kartları,
+          tedarikçi kartları, çalışan bilgileri
         </li>
         <li>
-          <strong>Proje Ekibinin Oluşturulması:</strong> İç destek ekibi, departman 
-          şampiyonları ve dış danışman rollerinin belirlenmesi
+          <strong>Proje Ekibinin Oluşturulması:</strong> İç destek ekibi,
+          departman şampiyonları ve dış danışman rollerinin belirlenmesi
         </li>
         <li>
-          <strong>Risk Değerlendirmesi:</strong> Olası risklerin ve alternatif 
+          <strong>Risk Değerlendirmesi:</strong> Olası risklerin ve alternatif
           senaryoların belirlenmesi
         </li>
       </ul>
@@ -40,31 +40,28 @@
   <details>
     <summary>Faz 1: Çekirdek Operasyon (8-12 Hafta)</summary>
     <div class="details-content">
-      <p>
-        İlk olarak en kritik süreçler sisteme alınır:
-      </p>
+      <p>İlk olarak en kritik süreçler sisteme alınır:</p>
       <ul>
         <li>
-          <strong>Mal Kabul ve Stok Girişi:</strong> Ürün girişlerinin lot/SKT ile 
-          kaydedilmesi, ÜTS alış bildirimi
+          <strong>Mal Kabul ve Stok Girişi:</strong> Ürün girişlerinin lot/SKT
+          ile kaydedilmesi, ÜTS alış bildirimi
         </li>
         <li>
-          <strong>Lot/SKT Yönetimi:</strong> FEFO kuralları, barkod yapısı, izlenebilirlik
+          <strong>Lot/SKT Yönetimi:</strong> FEFO kuralları, barkod yapısı,
+          izlenebilirlik
+        </li>
+        <li><strong>Temel Stok İşlemleri:</strong> Sayım, transfer, iade</li>
+        <li>
+          <strong>e-Fatura/e-İrsaliye Entegrasyonu:</strong> GİB bağlantısı,
+          fatura kesimi, ILAC_TIBBICIHAZ senaryosu
         </li>
         <li>
-          <strong>Temel Stok İşlemleri:</strong> Sayım, transfer, iade
+          <strong>ÜTS/İTS Entegrasyonu:</strong> Bakanlık API bağlantısı,
+          otomatik bildirimler
         </li>
         <li>
-          <strong>e-Fatura/e-İrsaliye Entegrasyonu:</strong> GİB bağlantısı, fatura 
-          kesimi, ILAC_TIBBICIHAZ senaryosu
-        </li>
-        <li>
-          <strong>ÜTS/İTS Entegrasyonu:</strong> Bakanlık API bağlantısı, otomatik 
-          bildirimler
-        </li>
-        <li>
-          <strong>Test ve Doğrulama:</strong> Parallel run (paralel çalışma) ile eski 
-          sistemle karşılaştırma
+          <strong>Test ve Doğrulama:</strong> Parallel run (paralel çalışma) ile
+          eski sistemle karşılaştırma
         </li>
       </ul>
     </div>
@@ -73,29 +70,27 @@
   <details>
     <summary>Faz 2: Satış ve Dağıtım (6-8 Hafta)</summary>
     <div class="details-content">
-      <p>
-        Müşteriye yönelik süreçlerin sisteme dahil edilmesi:
-      </p>
+      <p>Müşteriye yönelik süreçlerin sisteme dahil edilmesi:</p>
       <ul>
         <li>
-          <strong>Perakende Satış:</strong> POS entegrasyonu, barkod okutma, anlık 
-          fatura ve ÜTS çıkış bildirimi
+          <strong>Perakende Satış:</strong> POS entegrasyonu, barkod okutma,
+          anlık fatura ve ÜTS çıkış bildirimi
         </li>
         <li>
-          <strong>Toptan Satış:</strong> Müşteri siparişleri, teklif yönetimi, 
+          <strong>Toptan Satış:</strong> Müşteri siparişleri, teklif yönetimi,
           fiyat katalogları
         </li>
         <li>
-          <strong>Konsinye Yönetimi:</strong> Konsinye stok takibi, tüketim bildirimi, 
-          otomatik faturalandırma
+          <strong>Konsinye Yönetimi:</strong> Konsinye stok takibi, tüketim
+          bildirimi, otomatik faturalandırma
         </li>
         <li>
-          <strong>Saha Operasyonu:</strong> Tablet/mobil cihazlarla sipariş ve teslimat 
-          yönetimi
+          <strong>Saha Operasyonu:</strong> Tablet/mobil cihazlarla sipariş ve
+          teslimat yönetimi
         </li>
         <li>
-          <strong>Müşteri Kartı ve CRM:</strong> Müşteri profilleri, satış geçmişi, 
-          ödeme takibi
+          <strong>Müşteri Kartı ve CRM:</strong> Müşteri profilleri, satış
+          geçmişi, ödeme takibi
         </li>
       </ul>
     </div>
@@ -104,22 +99,23 @@
   <details>
     <summary>Faz 3: Satın Alma ve Tedarik Zinciri (4-6 Hafta)</summary>
     <div class="details-content">
-      <p>
-        Tedarik tarafının dijitalleştirilmesi:
-      </p>
+      <p>Tedarik tarafının dijitalleştirilmesi:</p>
       <ul>
         <li>
-          <strong>Satın Alma Modülü:</strong> Sipariş oluşturma, onay workflow'ları, 
-          tedarikçi yönetimi
+          <strong>Satın Alma Modülü:</strong> Sipariş oluşturma, onay
+          workflow'ları, tedarikçi yönetimi
         </li>
         <li>
-          <strong>Otomatik Sipariş:</strong> Minimum stok bazlı sipariş önerileri
+          <strong>Otomatik Sipariş:</strong> Minimum stok bazlı sipariş
+          önerileri
         </li>
         <li>
-          <strong>Tedarikçi Değerlendirme:</strong> Performans skorları, sözleşme takibi
+          <strong>Tedarikçi Değerlendirme:</strong> Performans skorları,
+          sözleşme takibi
         </li>
         <li>
-          <strong>İade Yönetimi:</strong> Tedarikçi iadeleri, kalite kontrol süreçleri
+          <strong>İade Yönetimi:</strong> Tedarikçi iadeleri, kalite kontrol
+          süreçleri
         </li>
       </ul>
     </div>
@@ -128,22 +124,23 @@
   <details>
     <summary>Faz 4: Finans ve Raporlama (4-6 Hafta)</summary>
     <div class="details-content">
-      <p>
-        Muhasebe ve yönetim karar destek sistemlerinin devreye alınması:
-      </p>
+      <p>Muhasebe ve yönetim karar destek sistemlerinin devreye alınması:</p>
       <ul>
         <li>
-          <strong>Genel Muhasebe:</strong> Büyük defter, faturalar, ödemeler, tahsilatlar
+          <strong>Genel Muhasebe:</strong> Büyük defter, faturalar, ödemeler,
+          tahsilatlar
         </li>
         <li>
-          <strong>Finansal Raporlama:</strong> Bilanço, gelir tablosu, nakit akışı
+          <strong>Finansal Raporlama:</strong> Bilanço, gelir tablosu, nakit
+          akışı
         </li>
         <li>
-          <strong>Yönetim Dashboard'ları:</strong> KPI'lar, performans metrikleri, 
-          trend analizleri
+          <strong>Yönetim Dashboard'ları:</strong> KPI'lar, performans
+          metrikleri, trend analizleri
         </li>
         <li>
-          <strong>İş Zekası Entegrasyonu:</strong> Detaylı analiz raporları, segmentasyon
+          <strong>İş Zekası Entegrasyonu:</strong> Detaylı analiz raporları,
+          segmentasyon
         </li>
       </ul>
     </div>
@@ -152,32 +149,40 @@
   <details>
     <summary>Eğitim Planı ve Değişim Yönetimi</summary>
     <div class="details-content">
-      <p>
-        Başarının %50'si eğitimdedir:
-      </p>
+      <p>Başarının %50'si eğitimdedir:</p>
       <ul>
         <li>
           <strong>Eğitim Türleri:</strong>
           <ul>
-            <li><em>Yönetici Eğitimi:</em> Dashboard okuma, raporlama, stratejik karar</li>
-            <li><em>Kullanıcı Eğitimi:</em> Günlük işlemler, barkod/terminal kullanımı</li>
-            <li><em>Teknik Eğitim:</em> Sistem yönetimi, hata çözümü, rapor tasarımı</li>
+            <li>
+              <em>Yönetici Eğitimi:</em> Dashboard okuma, raporlama, stratejik
+              karar
+            </li>
+            <li>
+              <em>Kullanıcı Eğitimi:</em> Günlük işlemler, barkod/terminal
+              kullanımı
+            </li>
+            <li>
+              <em>Teknik Eğitim:</em> Sistem yönetimi, hata çözümü, rapor
+              tasarımı
+            </li>
           </ul>
         </li>
         <li>
-          <strong>Eğitim Takvimi:</strong> Her faz öncesinde ilgili kullanıcıların 
-          eğitimi tamamlanmış olmalı
+          <strong>Eğitim Takvimi:</strong> Her faz öncesinde ilgili
+          kullanıcıların eğitimi tamamlanmış olmalı
         </li>
         <li>
-          <strong>Test Ortamı:</strong> Canlıya geçmeden önce tüm kullanıcıların 
+          <strong>Test Ortamı:</strong> Canlıya geçmeden önce tüm kullanıcıların
           deneme yapabileceği test sistemi
         </li>
         <li>
-          <strong>Destek Hattı:</strong> Geçiş sürecinde 7/24 teknik destek mekanizması
+          <strong>Destek Hattı:</strong> Geçiş sürecinde 7/24 teknik destek
+          mekanizması
         </li>
         <li>
-          <strong>Şampiyon Ağı:</strong> Her departmandan "ERP Şampiyonu" belirlenerek 
-          destek kültürü oluşturulması
+          <strong>Şampiyon Ağı:</strong> Her departmandan "ERP Şampiyonu"
+          belirlenerek destek kültürü oluşturulması
         </li>
       </ul>
     </div>
@@ -186,9 +191,7 @@
   <details>
     <summary>Proje Başarı Kriterleri ve Ölçümleme</summary>
     <div class="details-content">
-      <p>
-        Projenin başarısı net metriklerle ölçülür:
-      </p>
+      <p>Projenin başarısı net metriklerle ölçülür:</p>
       <div class="table-wrapper">
         <table class="comparison-table">
           <thead>
@@ -240,14 +243,16 @@
     <div class="callout-text">
       <h4>Başarısızlık Tuzağı: "Büyük Patlama"</h4>
       <p>
-        Tüm modülleri aynı anda canlıya almaya çalışmak, en sık yapılan hatadır. 
-        Her fazda %100 stabilite sağlanmadan diğerine geçilmemeli. Parallel run 
+        Tüm modülleri aynı anda canlıya almaya çalışmak, en sık yapılan hatadır.
+        Her fazda %100 stabilite sağlanmadan diğerine geçilmemeli. Parallel run
         (eski ve yeni sistem yan yana) mutlaka yapılmalıdır.
       </p>
     </div>
   </div>
 
   <div class="survey-container">
-    <h2 class="survey-title">© 2026 Mustafa Yazar - Medikal ERP</h2>
+    <h2 class="survey-title">
+      © 2026 <a href="mailto:yazarmus@gmail.com">Mustafa Yazar</a> - Medikal ERP
+    </h2>
   </div>
 </article>
