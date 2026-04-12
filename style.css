@@ -30,11 +30,23 @@ header {
   border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 16px 40px;
   position: sticky;
   top: 0;
   background-color: #fff;
   z-index: 100;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  color: var(--text-primary);
 }
 
 header .logo {
@@ -260,23 +272,39 @@ details[open] summary::after {
     flex-direction: column; /* Sütun yapısına çevir */
   }
 
+  header {
+    padding: 16px 24px;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
   header .logo {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .main-content {
-    order: 1; /* İçerik ÖNCE gelsin */
+    order: 2; /* İçerik SONRA gelsin (Menü üstte kalacak şekilde) */
     padding: 24px 16px;
     max-width: 100%;
   }
 
   .sidebar {
-    order: 2; /* Sol Menü SONRA (sayfa altına) gelsin */
+    order: 1; /* Sol Menü mobilde ÜSTTE (header altında) */
     width: 100%;
     height: auto;
-    position: static; /* Sabitliği iptal et */
-    padding: 24px 0;
-    border-top: 1px solid var(--border-color);
+    position: static;
+    padding: 0;
+    border-top: none;
+    display: none; /* Varsayılan olarak gizle */
+    background-color: #f8f9fa;
+  }
+
+  .sidebar.show {
+    display: block; /* Butona basılınca göster */
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .sidebar-link {
@@ -342,13 +370,13 @@ details[open] summary::after {
   font-size: 13px;
 }
 
-.comparison-table td:contains("✓") {
+.comparison-table td.has-check {
   color: #0f9d58;
   font-weight: 600;
   text-align: center;
 }
 
-.comparison-table td:contains("-") {
+.comparison-table td.has-dash {
   color: #9e9e9e;
   text-align: center;
 }

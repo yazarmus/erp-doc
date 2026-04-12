@@ -10,11 +10,12 @@
     <!-- Üst Bar -->
     <header>
       <div class="logo"><span>Medikal ERP - Dönüşüm Rehberi</span></div>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">Menü</button>
     </header>
 
     <div class="page-container">
       <!-- Tek Yol Menü -->
-      <aside class="sidebar">
+      <aside class="sidebar" id="sidebar">
         <h2>Rehber Konuları</h2>
         <ul class="sidebar-menu">
           <li>
@@ -68,6 +69,18 @@
           <li>
             <a
               href="#"
+              id="menu-faz4"
+              class="sidebar-link"
+              onclick="
+                loadPage('faz4.html', 'menu-faz4', 'Güvenlik ve Yetkilendirme');
+                return false;
+              "
+              >Güvenlik ve Yetkilendirme</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
               id="menu-faz5"
               class="sidebar-link"
               onclick="
@@ -91,34 +104,6 @@
                 return false;
               "
               >Raporlama ve İş Zekası</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              id="menu-faz4"
-              class="sidebar-link"
-              onclick="
-                loadPage('faz4.html', 'menu-faz4', 'Güvenlik ve Yetkilendirme');
-                return false;
-              "
-              >Güvenlik ve Yetkilendirme</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              id="menu-faz9"
-              class="sidebar-link"
-              onclick="
-                loadPage(
-                  'faz9.html',
-                  'menu-faz9',
-                  'Yatırım Analizi ve Vendor Seçimi',
-                );
-                return false;
-              "
-              >Yatırım ve Vendor Seçimi</a
             >
           </li>
           <li>
@@ -149,6 +134,22 @@
               >Sözlük ve KPI Metrikleri</a
             >
           </li>
+          <li>
+            <a
+              href="#"
+              id="menu-faz9"
+              class="sidebar-link"
+              onclick="
+                loadPage(
+                  'faz9.html',
+                  'menu-faz9',
+                  'Yatırım Analizi ve Vendor Seçimi',
+                );
+                return false;
+              "
+              >Yatırım ve Vendor Seçimi</a
+            >
+          </li>
         </ul>
       </aside>
 
@@ -175,12 +176,55 @@
 
     <!-- Dinamik Yükleme Scripti -->
     <script>
-      // Sayfa yüklendiğinde ilk fazı çağır
+      // Sayfa yönergelerini tutacak obje
+      const pageInfo = {
+        'menu-faz1': { url: 'faz1.html', title: 'Neden ERP? (Yönetici Özeti)', id: 'menu-faz1' },
+        'menu-faz2': { url: 'faz2.html', title: 'Modül ve Yasal Gereksinimler', id: 'menu-faz2' },
+        'menu-faz3': { url: 'faz3.html', title: 'Uçtan Uca Operasyon Senaryoları', id: 'menu-faz3' },
+        'menu-faz4': { url: 'faz4.html', title: 'Güvenlik ve Yetkilendirme', id: 'menu-faz4' },
+        'menu-faz5': { url: 'faz5.html', title: 'Tedarikçi ve Satın Alma', id: 'menu-faz5' },
+        'menu-faz6': { url: 'faz6.html', title: 'Raporlama ve İş Zekası', id: 'menu-faz6' },
+        'menu-faz7': { url: 'faz7.html', title: 'Proje Uygulama Yol Haritası', id: 'menu-faz7' },
+        'menu-faz8': { url: 'faz8.html', title: 'Sözlük ve KPI Metrikleri', id: 'menu-faz8' },
+        'menu-faz9': { url: 'faz9.html', title: 'Yatırım ve Vendor Seçimi', id: 'menu-faz9' }
+      };
+
+      // Sayfa yüklendiğinde URL'den fazı oku veya ilk fazı çağır
       document.addEventListener("DOMContentLoaded", () => {
-        loadPage("faz1.html", "menu-faz1", "Neden ERP? (Yönetici Özeti)");
+        const urlParams = new URLSearchParams(window.location.search);
+        const pageParam = urlParams.get('page');
+
+        let startPageId = 'menu-faz1';
+        if (pageParam && pageInfo[pageParam]) {
+          startPageId = pageParam;
+        } else if (pageParam && pageInfo['menu-' + pageParam]) {
+          startPageId = 'menu-' + pageParam;
+        }
+
+        const info = pageInfo[startPageId];
+        loadPage(info.url, info.id, info.title, false);
       });
 
-      function loadPage(pageUrl, menuId, breadcrumbTitle) {
+      // Tarayıcı Geri/İleri butonlarını dinle
+      window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.id) {
+          const info = pageInfo[event.state.id];
+          if (info) {
+            loadPage(info.url, info.id, info.title, false);
+          }
+        } else {
+          // Fallback
+          loadPage("faz1.html", "menu-faz1", "Neden ERP? (Yönetici Özeti)", false);
+        }
+      });
+
+      function loadPage(pageUrl, menuId, breadcrumbTitle, pushToHistory = true) {
+        if (pushToHistory) {
+          const pageParam = menuId.replace('menu-', '');
+          const newUrl = window.location.pathname + '?page=' + pageParam;
+          window.history.pushState({ id: menuId }, breadcrumbTitle, newUrl);
+        }
+
         // Menülerdeki 'active' sınıfını temizle
         document
           .querySelectorAll(".sidebar-link")
@@ -205,7 +249,23 @@
           })
           .then((html) => {
             document.getElementById("content-area").innerHTML = html;
+
+            // Tablolardaki hücrelere CSS sınıflarını ekle
+            document.querySelectorAll('.comparison-table td').forEach(td => {
+              if (td.textContent.includes('✓')) {
+                td.classList.add('has-check');
+              } else if (td.textContent.trim() === '-') {
+                td.classList.add('has-dash');
+              }
+            });
+
             window.scrollTo(0, 0); // Sayfa başına git
+
+            // Mobilde menü tıklandıktan sonra menüyü kapat
+            const sidebar = document.getElementById('sidebar');
+            if (sidebar.classList.contains('show')) {
+              sidebar.classList.remove('show');
+            }
           })
           .catch((error) => {
             document.getElementById("content-area").innerHTML = `
@@ -214,6 +274,11 @@
                             <p>Yerel dosyalarda fetch API kullanabilmek için bir lokal sunucu (örn: VS Code Live Server) kullanmanız gerekebilir.</p>
                         </div>`;
           });
+      }
+
+      function toggleMobileMenu() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('show');
       }
     </script>
   </body>
